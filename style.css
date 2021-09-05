@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta&family=Poppins&display=swap');
+
+:root {
+    --primary-bg-color: #1F2937;
+    --secondary-bg-color: #374151;
+    --text-color: white;
+    --font-style: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-style);
+    margin: 0px;
+    background-color: var(--primary-bg-color);
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    padding: 2rem;
+    margin: auto;
+}
+
+.input-container input {
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    font-family:  var(--font-style);
+    border-radius: 0.35rem;
+
+}
+
+#submit-button {
+    padding: 0.5rem;
+    margin: 2rem 1rem;
+    font-family: var(--font-style);
+    font-weight: bold;
+    background-color: rgb(40, 40, 168);
+    color: var(--text-color);
+}
+
+
+#header {
+    text-align: center;
+    color: var(--text-color);
+}
+
+
+.result-container {
+    text-align: center;
+    color: var(--text-color);
+    font-weight: bold;
+    font-family: var(--font-style);
+}
+
+
