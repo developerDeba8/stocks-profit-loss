@@ -16,37 +16,34 @@ function resultOutput(string, status){
                        break;               
     
         default:    output.innerText = string;
-            break;
+                    output.style.color = 'white';
     }
 }
 
 function calculateProfitLoss(intialStockPrice, stockQty, currentStockPrice){
     var initialTotalInvestment = intialStockPrice * stockQty;
     if(intialStockPrice > currentStockPrice){
-        console.log('Inside loss block', intialStockPrice, currentStockPrice);
         var loss = (intialStockPrice - currentStockPrice) * stockQty;
         var lossPercentage = (loss / initialTotalInvestment) * 100;
 
         resultOutput(`Hey the loss is ${loss} and the loss percent is ${lossPercentage}%`, 'LOSS');
 
     } else if(intialStockPrice < currentStockPrice){
-        console.log('Inside profit block', intialStockPrice, currentStockPrice);
         var profit = (currentStockPrice - intialStockPrice) * stockQty;
         var profitPercentage = (profit / initialTotalInvestment) * 100;
 
         resultOutput(`Hey the profit is ${profit} and the profit percent is ${profitPercentage}%`, 'PROFIT');
     } else{
-        console.log("Inside equal block");
         resultOutput('No change in captial', 'NONE');
     }
 }
 
 function clickHandler(){
-    var initialStckPr = initialPrice.value;
-    var stckQty = stocksQuantity.value;
-    var currentStckPr = currentPrice.value;
+    var initialStckPr = Number(initialPrice.value);
+    var stckQty = Number(stocksQuantity.value);
+    var currentStckPr = Number(currentPrice.value);
 
-    console.log(initialStckPr, stckQty, currentStckPr);
+    /* console.log(initialStckPr, stckQty, currentStckPr); */
     calculateProfitLoss(initialStckPr, stckQty, currentStckPr);
     
 
