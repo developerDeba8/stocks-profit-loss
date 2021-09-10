@@ -23,14 +23,14 @@ function resultOutput(string, status){
 function calculateProfitLoss(intialStockPrice, stockQty, currentStockPrice){
     var initialTotalInvestment = intialStockPrice * stockQty;
     if(intialStockPrice > currentStockPrice){
-        var loss = (intialStockPrice - currentStockPrice) * stockQty;
-        var lossPercentage = (loss / initialTotalInvestment) * 100;
+        var loss = ((intialStockPrice - currentStockPrice) * stockQty).toFixed(2);
+        var lossPercentage = ((loss / initialTotalInvestment) * 100).toFixed(2);
 
         resultOutput(`Hey the loss is ${loss} and the loss percent is ${lossPercentage}%`, 'LOSS');
 
     } else if(intialStockPrice < currentStockPrice){
-        var profit = (currentStockPrice - intialStockPrice) * stockQty;
-        var profitPercentage = (profit / initialTotalInvestment) * 100;
+        var profit = ((currentStockPrice - intialStockPrice) * stockQty).toFixed(2);
+        var profitPercentage = ((profit / initialTotalInvestment) * 100).toFixed(2);
 
         resultOutput(`Hey the profit is ${profit} and the profit percent is ${profitPercentage}%`, 'PROFIT');
     } else{
@@ -42,6 +42,11 @@ function clickHandler(){
     var initialStckPr = Number(initialPrice.value);
     var stckQty = Number(stocksQuantity.value);
     var currentStckPr = Number(currentPrice.value);
+
+    if(initialStckPr == "" || stckQty == "" || currentStckPr == ""){
+        resultOutput('All fields are mandatory');
+        return;
+    }
 
     /* console.log(initialStckPr, stckQty, currentStckPr); */
     calculateProfitLoss(initialStckPr, stckQty, currentStckPr);
