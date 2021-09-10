@@ -48,6 +48,11 @@ function clickHandler(){
         return;
     }
 
+    if(initialStckPr < 0 || stckQty < 0 || currentStckPr < 0){
+        resultOutput('Only positive values are allowed');
+        return;
+    }
+
     /* console.log(initialStckPr, stckQty, currentStckPr); */
     calculateProfitLoss(initialStckPr, stckQty, currentStckPr);
     
